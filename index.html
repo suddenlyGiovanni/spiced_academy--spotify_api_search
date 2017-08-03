@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Spotify Search</title>
+        <link rel="stylesheet" href="style.css">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.5/handlebars.min.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <script type="text/javascript" src="script.js"></script>
+    </head>
+    <body>
+        <h1>Spotify Search</h1>
+        <header>
+            <div id="controls">
+                <input type="text" placeholder="Artist / Album">
+                <select>
+                    <option value="artist">Artist</option>
+                    <option value="album">Album</option>
+                </select>
+                <div id="btn-go">GO</div>
+            </div>
+        </header>
+        <section></section>
+        <main>
+
+        </main>
+
+        <footer>
+            <div id="btn-more">MORE</div>
+        </footer>
+
+        <template id="results-headline">
+            <section>
+                <h2>Results for: "{{this}}"</h2>
+            </section>
+        </template>
+
+        <template id="resultsEntries">
+            {{#each this}}
+
+            <div class="entry">
+                <a href="{{external_urls/spotify}}">
+                    <img src="{{images.[ 0 ]}}" alt="cover art picture of {{name}}">
+                </a>
+                <h3>
+                    <a href="{{external_urls/spotify}}">
+                        {{name}}
+                    </a>
+                </h3>
+            </div>
+            {{/each}}
+        </template>
+
+    </body>
+</html>
